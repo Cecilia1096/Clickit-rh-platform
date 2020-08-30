@@ -1,9 +1,12 @@
-/* archivo  permitira inicializar nuestro servidor*/
+/* el archivo index permitira inicializar nuestro servidor*/
+require('dotenv').config();
+/*const app = require('./app');*/
+require('./database');
 
-const app = require('./app')
-async function main(){
-    await app.listen(3000)
-    console.log('Server on port 4000')
+
+/*async function main(){
+    await app.listen(3000);
+    console.log('Server on port 3000');
 }
-main();
+main();*/
 
