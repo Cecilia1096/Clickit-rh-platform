@@ -1,1 +1,1 @@
-# Clickit-rh-platform
+# clickit-rh-platform
