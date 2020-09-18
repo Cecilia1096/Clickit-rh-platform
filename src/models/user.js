@@ -19,15 +19,15 @@ const userSchema = new Schema({
     required:true,
     min:10,
   },
-  /*resetlink:{
+  resetlink:{
     data: String,
     default:''
-  } */
+  } 
 },{
     timestamps:true
 })
 
-module.exports = model('User', userSchema);
+module.exports = model('user', userSchema);
 
 
 
