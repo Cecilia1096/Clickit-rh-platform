@@ -17,9 +17,11 @@ app.use(
     })
 )
 
+//set up routes
 
-//Routes
-app.use('/users', require('./routes/users'))
+app.use("/",require("./routes/user"));
+
+
 
 module.exports = app; /* exportando app */
 

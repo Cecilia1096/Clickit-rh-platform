@@ -1,0 +1,7 @@
+.password-toogle-icon {
+    position: absolute;
+    top: 61%;
+    right: 37px;
+    z-index: 1000;
+    cursor: pointer;
+}
