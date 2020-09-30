@@ -57,19 +57,19 @@ router.post("/", async (req, res) => {
     if (!email || !password)
       return res
       .status(400)
-       .json({ msg: "Not all fields have been entered." });
+       .json({ msg: "No se han introducido todos los campos." });
 
     const User = await user.findOne({ email: email });
     if (!User)
       return res
         .status(400)
-        .json({ msg: "No account with this email has been registered." });
+        .json({ msg: "No se ha registrado ninguna cuenta con este correo electrónico." });
 
     const isMatch = await bcrypt.compare(password, User.password);
     if (!isMatch)
        return res
        .status(400)
-        .json({ msg: "Invalid credentials." });
+        .json({ msg: "Credenciales no válidas." });
 
     const token = jwt.sign({ id: User._id }, process.env.JWT_SECRET);
     res.json({

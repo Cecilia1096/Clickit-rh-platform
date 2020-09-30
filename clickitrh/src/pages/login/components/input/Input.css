@@ -1,7 +1,61 @@
 .password-toogle-icon {
     position: absolute;
-    top: 61%;
+    top: 67%;
     right: 37px;
     z-index: 1000;
     cursor: pointer;
 }
+.button-login {
+    display: flex;
+    justify-content: center;
+}
+.forgot-password {
+    text-align: right;
+    margin: 20px 30px;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+.MuiFilledInput-underline:after {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    border-bottom: 2px solid #007bff !important;
+    pointer-events: none;
+}
+.MuiButton-contained:hover {
+    box-shadow: 0 0 0 0 !important;
+    background-color: #007bff !important;
+}
+.MuiFormLabel-root.Mui-focused{
+    color:#007bff !important;
+}
+/* error notice*/
+.error-notice{
+    margin:1rem 0;
+    padding: 0.5rem;
+    border: 1px solid #e07c7c;
+    border-radius: 8px;
+    background-color: #f8d6d6;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 41%;
+    left: 9%;
+    width: 77%;
+}
+.error-notice button{
+    background-color: #df4344;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #ffffff;
+}
+
+

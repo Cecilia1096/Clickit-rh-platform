@@ -7,6 +7,7 @@ import  Button from '@material-ui/core/Button';
 import {withStyles} from '@material-ui/core/styles';
 import  './Input.css';
 import usePasswordToggle from '../passwordToggle/usePasswordToggle';
+import ErrorNotice from '../input/ErrorNotice';
 
 const styles = {
   widthnew:{
@@ -17,14 +18,19 @@ const styles = {
      margin: 'auto'
   },
   widthbutton:{
-    width: 300,
+    width: '84%',
     borderRadius: 20,
     backgroundColor: '#007bff',
-    margin: 20,
+    margin: '-3px 0px 0px',
     boxShadow: '0 0 0 0',
     height: '40px'
   },
-
+  MuiButtonContained:{
+  '&:hover':{
+    boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
+    backgroundColor: '#007bff'
+  }
+  }
 };
 
 const Input = (props) => {
@@ -34,13 +40,15 @@ const Input = (props) => {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-  
+    const [error,setError] = useState();
+;  
 
     const { setUserData } = useContext(UserContext);
     const history = useHistory();
 
     const submit = async (e) => {
       e.preventDefault();
+      try{
         const loginUser = { email, password };
         const loginRes = await Axios.post(
           "http://localhost:4000/",
@@ -52,11 +60,17 @@ const Input = (props) => {
         });
         localStorage.setItem("auth-token", loginRes.data.token);
         history.push("/dashboard");
-      };
+      } catch (err){
+         err.response.data.msg && setError(err.response.data.msg);
+      }
+    };
     return(
 
-        <div >
-        <form onSubmit={submit}>
+      <div >
+      {error &&(
+        <ErrorNotice message={error} clearError={() => setError(undefined)}/>
+      )}
+      <form className="content-form" onSubmit={submit}>
         <TextField className={classes.widthnew}
           id ="filled-basic" 
           label="Email" 
@@ -74,13 +88,16 @@ const Input = (props) => {
         />
         <span className="password-toogle-icon">
           {ToggleIcon}</span>
-
-        <Button 
-         className={classes.widthbutton}
-         type="submit"
-         variant="contained" 
-         color="primary"
-        >Iniciar Sesion</Button>
+         <div className="forgot-password">
+           <a href="...">¿Olvidaste tu contraseña?</a>
+         </div>
+         <div className="button-login">
+         <Button 
+          className={classes.widthbutton}
+          type="submit"
+          variant="contained" 
+          >Iniciar Sesion</Button>
+         </div>
         </form>
         </div>
         

@@ -1,3 +1,41 @@
+body {
+    background-color: white;
+    font-family: "Avenir Next W01", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #1C242B;
+}
+
+* {
+    background-repeat: no-repeat;
+    padding: 0;
+    margin: 0;
+}
+
+.sso-title {
+    position: absolute;
+    top: 23%;
+}
+
+.sso_separator {
+    position: absolute;
+    top: 39%;
+    border-top: 1px solid #A8AFB3;
+    width: 82%;
+}
+
+span.sso_separator_text {
+    background: white;
+    color: #A8AFB3;
+    padding: 0 10px;
+    position: relative;
+    top: -10px;
+    left: 45%;
+}
+
+form.content-form {
+    margin-top: 58%;
+}
+
 
 
 
