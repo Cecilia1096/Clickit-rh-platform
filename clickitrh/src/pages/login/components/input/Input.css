@@ -1,39 +1,43 @@
-.password-toogle-icon {
-    position: absolute;
-    top: 67%;
-    right: 37px;
-    z-index: 1000;
+.password-toogle-content {
+    position: relative;
     cursor: pointer;
+    float: right;
+    width: 44%;
+    top: -37px;
 }
 .button-login {
     display: flex;
     justify-content: center;
 }
 .forgot-password {
-    text-align: right;
+    text-align: center;
     margin: 20px 30px;
 }
 a {
-    color: #007bff;
+    color: #0088fb;
     text-decoration: none;
 }
 .MuiFilledInput-underline:after {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: "";
-    position: absolute;
-    transform: scaleX(0);
-    transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-    border-bottom: 2px solid #007bff !important;
-    pointer-events: none;
+    border-bottom: 2px solid #0088fb !important;
+    
+}
+.MuiButton-contained {
+    color: rgb(255, 255, 255) !important;
+    
 }
 .MuiButton-contained:hover {
-    box-shadow: 0 0 0 0 !important;
-    background-color: #007bff !important;
+    background-color:rgb(255, 103, 0) !important;
+   
 }
 .MuiFormLabel-root.Mui-focused{
-    color:#007bff !important;
+    color: #0088fb !important;
+}
+.svg-inline--fa {
+    display: inline-block;
+    font-size: large;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
 }
 /* error notice*/
 .error-notice{
@@ -46,9 +50,9 @@ a {
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    top: 41%;
-    left: 9%;
-    width: 77%;
+    top: 29%;
+    left: 42%;
+    width: 15%;
 }
 .error-notice button{
     background-color: #df4344;
@@ -57,5 +61,13 @@ a {
     border-radius: 50%;
     color: #ffffff;
 }
-
+.bienvenido-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 19%;
+    right: 46%;
+}
 

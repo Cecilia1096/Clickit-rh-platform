@@ -8,6 +8,7 @@ import {withStyles} from '@material-ui/core/styles';
 import  './Input.css';
 import usePasswordToggle from '../passwordToggle/usePasswordToggle';
 import ErrorNotice from '../input/ErrorNotice';
+import logo from '../../containers/login.css';
 
 const styles = {
   widthnew:{
@@ -18,23 +19,17 @@ const styles = {
      margin: 'auto'
   },
   widthbutton:{
-    width: '84%',
+    width: '300px',
     borderRadius: 20,
-    backgroundColor: '#007bff',
+    backgroundColor: '#0088fb',
     margin: '-3px 0px 0px',
-    boxShadow: '0 0 0 0',
     height: '40px'
   },
-  MuiButtonContained:{
-  '&:hover':{
-    boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)',
-    backgroundColor: '#007bff'
-  }
-  }
 };
 
-const Input = (props) => {
 
+const Input = (props) => {
+   
     const {classes} = props;
     const [PasswordInputType,ToggleIcon] = usePasswordToggle();
 
@@ -70,24 +65,27 @@ const Input = (props) => {
       {error &&(
         <ErrorNotice message={error} clearError={() => setError(undefined)}/>
       )}
+      <div className="bienvenido-content"><h1>¡Bienvenido!</h1></div>
       <form className="content-form" onSubmit={submit}>
         <TextField className={classes.widthnew}
           id ="filled-basic" 
-          label="Email" 
+          label="Correo" 
           type="email"
           variant="filled"
           onChange={(e) => setEmail(e.target.value)}
          />
         <TextField className={classes.widthnew}
           id="filled-password-input"
-          label="Password"
+          label="Contraseña"
           type={PasswordInputType}
           autoComplete="current-password"
           variant="filled"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <span className="password-toogle-icon">
+         <div className="password-toogle-content">
+          <span className="password-toogle-icon">
           {ToggleIcon}</span>
+          </div>
          <div className="forgot-password">
            <a href="...">¿Olvidaste tu contraseña?</a>
          </div>
@@ -96,7 +94,7 @@ const Input = (props) => {
           className={classes.widthbutton}
           type="submit"
           variant="contained" 
-          >Iniciar Sesion</Button>
+          >Iniciar Sesión</Button>
          </div>
         </form>
         </div>
